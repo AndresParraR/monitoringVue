@@ -9,7 +9,7 @@ import Socket from './utils/socketIO'
 
 export const coordinatesBus = new Vue();
 
-const socket = new Socket({
+Vue.prototype.$socket = new Socket({
   connection: process.env.VUE_APP_SOCKETS_URL,
   vuex: {
     store,
