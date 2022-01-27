@@ -9,7 +9,7 @@
       height="75"
     >
 
-      <v-btn class="btn-app-bar" fab @click="expandOnHover = !expandOnHover"><v-icon>{{drawer ? 'mdi-dots-vertical' : 'mdi-view-list'}}</v-icon></v-btn>
+      <v-btn class="btn-app-bar" fab @click="drawer = !drawer"><v-icon>{{drawer ? 'mdi-dots-vertical' : 'mdi-view-list'}}</v-icon></v-btn>
 
       <v-spacer />
 
@@ -78,8 +78,6 @@
       v-model="drawer" dark app
       :overlay-opacity="100"
       mobile-break-point="960"
-      :expand-on-hover="expandOnHover"
-      :style="{'width': expandOnHover ? '90px' : '260px'}"
       width="260"
     >
       <v-img
