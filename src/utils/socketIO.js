@@ -12,6 +12,7 @@ class Socket {
     [...Object.keys(this.store._mutations)].forEach(el => {
       if(el.includes(this.prefix)){
         this.io.on(el.substring(this.prefix.length), (data) => {
+          console.log(el, data);
           this.store.dispatch(el, data)
         });
       }
