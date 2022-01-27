@@ -19,13 +19,9 @@ export default {
   },
   created() {
     coordinatesBus.$on('coordinatesChanged', () =>{
-      console.log('Test')
       this.markerLatLng = this.$store.state.marker
       this.currentCenter = this.$store.state.center
     })
-  },
-  updated() {
-    console.log('Updated Map')
   },
   data () {
     return {
