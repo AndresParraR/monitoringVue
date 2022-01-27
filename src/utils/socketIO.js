@@ -6,16 +6,14 @@ class Socket {
     this.io = io(config.connection);
     this.store = config.vuex.store;
     this.prefix = config.vuex.prefix;
+    this.createSocketsOn();
   }
   
   createSocketsOn(){
     [...Object.keys(this.store._mutations)].forEach(el => {
-      console.log(el);
       if(el.includes(this.prefix)){
-        console.log(el);
         this.io.on(el.substring(this.prefix.length), (data) => {
-          console.log(el, data);
-          this.store.dispatch(el, data)
+          this.store.commit(el, data)
         });
       }
     });

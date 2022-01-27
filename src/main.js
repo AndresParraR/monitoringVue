@@ -10,7 +10,7 @@ import Socket from './utils/socketIO'
 export const coordinatesBus = new Vue();
 
 Vue.prototype.$socket = new Socket({
-  connection: process.env.VUE_APP_SOCKETS_URL,
+  connection: "https://briefcase-api-node.herokuapp.com",
   vuex: {
     store,
     prefix: 'SOCKET_'
