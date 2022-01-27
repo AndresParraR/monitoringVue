@@ -10,6 +10,7 @@ class Socket {
   
   createSocketsOn(){
     [...Object.keys(this.store._mutations)].forEach(el => {
+      console.log(el);
       if(el.includes(this.prefix)){
         console.log(el);
         this.io.on(el.substring(this.prefix.length), (data) => {
