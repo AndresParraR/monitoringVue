@@ -133,7 +133,7 @@ export default {
   },
   data() {
     return {
-      drawer: true,
+      drawer: null,
       expandOnHover: false,
       nameTitle: null,
     }
